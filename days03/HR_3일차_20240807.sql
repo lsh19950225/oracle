@@ -1,0 +1,3 @@
+-- HR
+SELECT *
+FROM arirang;
