@@ -159,7 +159,7 @@ FROM emp;
 -- [RTRIM/LTRIM] : 특정문자와 일치하는 문자를 제거하고 출력
 select RTRIM('BROWINGyxXxy','xy') "RTRIM example"
     , LTRIM('****8978', '*') -- 연속된것만 다 지움.
-    , LTRIM('    test    ',' ')
+    , LTRIM('    test    ',' ') -- test    
     , '[' || RTRIM(LTRIM('    test    ',' '),' ') || ']'
     , '[' || TRIM('    test    ') || ']'
 from dual;
@@ -447,9 +447,9 @@ WITH temp AS (
     FROM emp
 )
 SELECT *
-        , CASE deptno   WHEN 10 THEN COUNT(deptno)
-                        WHEN 20 THEN COUNT(deptno)
-                        ELSE COUNT(deptno)
+        , CASE deptno   WHEN 10 THEN 1
+                        WHEN 20 THEN 1
+                        ELSE 1
         END a
 FROM temp;
 
