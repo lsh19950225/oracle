@@ -77,10 +77,10 @@ FROM (
 -- 자바 패키지 - 서로 관련된 클래스들의 묶음
 -- 오라클 패키지 - 서로 관련된 타입, 프로그램 객체, 서브프로그램(procedure, function)들의 묶음 : 유지 보수, 관리
 -- package : PL/SQL의 패키지는 관계되는 타입, 프로그램 객체, 서브프로그램(procedure, function)을 논리적으로 묶어 놓은 것
--- 0.0 <= SYS.dbms_random.value <= 1.0 : 실수
+-- 0.0 <= SYS.dbms_random.value < 1.0 : 실수
 SELECT
     SYS.dbms_random.value -- 함수
---    , SYS.dbms_random.value(0,100) -- 0.0 <= 실수 <= 100.0
+--    , SYS.dbms_random.value(0,100) -- 0.0 <= 실수 < 100.0
 --    , SYS.dbms_random.string('U',5) -- 랜덤하게 대문자 5글자 : 어퍼 -- 함수
 --    , SYS.dbms_random.string('L',5) -- 소문자 : 로우
 --    , SYS.dbms_random.string('X',5) -- 랜덤하게 대문자+숫자
@@ -402,7 +402,7 @@ PIVOT (그룹합수(집계컬럼)) FOR 피벗컬럼 IN (피벗컬럼 AS 별칭..);
 -- 1월 2월 3월 .. 12월
 -- 2   0   5      3
 SELECT *
-FROM (TO_CHAR(hiredate,'YYYY') year, TO_CHAR(hiredate,'MM') month FROM emp)
+FROM (TO_CHAR(hiredate,'MM') month FROM emp)
 PIVOT ( COUNT(month) FOR month IN ('01' AS "1월",'02','03','04','05','06','07','08','09','10','11','12'))
 ORDER BY year;
 -- 문제 emp 테이블에서 job별 사원수 조회.
