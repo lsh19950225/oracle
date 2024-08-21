@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="8" version="2.0">
+<workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="383" y="139">
+<window height="768" maximized="true" width="1024" x="232" y="91">
 <fastViewData fastViewLocation="1024"/>
 <intro standby="true"/>
 <perspectiveBar>
@@ -30,6 +30,9 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
 </presentation>
 </folder>
 </info>
@@ -43,8 +46,17 @@
 <editor id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="public.xdic" partName="public.xdic" path="C:/Class/Workspace/OracleClass/oracle/eXERD/eXERD-Samples/public.xdic" title="public.xdic" tooltip="eXERD-Samples/public.xdic" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eXERD-Samples/public.xdic"/>
 </editor>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="join.exerd" partName="join.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/join.exerd" title="join.exerd" tooltip="scottProject/join.exerd" workbook="DefaultEditorWorkbook">
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="join.exerd" partName="join.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/join.exerd" title="join.exerd" tooltip="scottProject/join.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/join.exerd"/>
+</editor>
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="video.exerd" partName="video.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/video.exerd" title="video.exerd" tooltip="scottProject/video.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/video.exerd"/>
+</editor>
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="survey.exerd" partName="survey.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/survey.exerd" title="survey.exerd" tooltip="scottProject/survey.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/survey.exerd"/>
+</editor>
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="설문조사(survey).exerd" partName="설문조사(survey).exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/설문조사(survey).exerd" title="설문조사(survey).exerd" tooltip="scottProject/설문조사(survey).exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/설문조사(survey).exerd"/>
 </editor>
 </editors>
 <views>
@@ -54,8 +66,11 @@
 <filter element=".*" isEnabled="false"/>
 </filters>
 <expanded>
-<element path="/eXERD-Samples"/>
+<element path="/scottProject"/>
 </expanded>
+<selection>
+<element path="/scottProject/설문조사(survey).exerd"/>
+</selection>
 </viewState>
 </view>
 <view id="com.tomato.exerd.ui.views.thumbnail" partName="썸네일">
@@ -128,7 +143,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@bfb884" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="leftFolder">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@bfb884" ratio="0.89368105" ratioLeft="891" ratioRight="106" relationship="2" relative="leftFolder">
 <folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
 <page content="org.eclipse.ui.internal.introview" label="환영 페이지"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
@@ -139,7 +154,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.18" ratioLeft="180" ratioRight="820" relationship="2" relative="leftFolder"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1af1bb3" ratio="0.77926826" ratioLeft="639" ratioRight="181" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1af1bb3" ratio="0.8589981" ratioLeft="1389" ratioRight="228" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.tomato.exerd.ui.views.thumbnail" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.thumbnail" label="썸네일"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -189,11 +204,22 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/eXERD-Samples/pos.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/eXERD-Samples/public.xdic"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/join.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/video.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/survey.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/설문조사(survey).exerd"/>
 </editors>
 <item historyLabel="study.exerd" index="0"/>
 <item historyLabel="pos.exerd" index="1"/>
 <item historyLabel="public.xdic" index="2"/>
-<item active="true" historyLabel="join.exerd" index="3"/>
+<item historyLabel="join.exerd" index="3"/>
+<item historyLabel="video.exerd" index="4"/>
+<item historyLabel="join.exerd" index="3"/>
+<item historyLabel="survey.exerd" index="5"/>
+<item historyLabel="video.exerd" index="4"/>
+<item historyLabel="survey.exerd" index="5"/>
+<item historyLabel="video.exerd" index="4"/>
+<item historyLabel="survey.exerd" index="5"/>
+<item active="true" historyLabel="설문조사(survey).exerd" index="6"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -211,6 +237,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="설문조사(survey).exerd" tooltip="scottProject/설문조사(survey).exerd">
+<persistable path="/scottProject/설문조사(survey).exerd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="survey.exerd" tooltip="scottProject/survey.exerd">
+<persistable path="/scottProject/survey.exerd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="video.exerd" tooltip="scottProject/video.exerd">
+<persistable path="/scottProject/video.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="join.exerd" tooltip="scottProject/join.exerd">
 <persistable path="/scottProject/join.exerd"/>
 </file>
