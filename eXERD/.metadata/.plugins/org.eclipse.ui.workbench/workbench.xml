@@ -33,6 +33,7 @@
 <part id="4"/>
 <part id="5"/>
 <part id="6"/>
+<part id="7"/>
 </presentation>
 </folder>
 </info>
@@ -55,8 +56,11 @@
 <editor id="com.tomato.exerd.editor.DiagramEditor" name="survey.exerd" partName="survey.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/survey.exerd" title="survey.exerd" tooltip="scottProject/survey.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/survey.exerd"/>
 </editor>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="설문조사(survey).exerd" partName="설문조사(survey).exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/설문조사(survey).exerd" title="설문조사(survey).exerd" tooltip="scottProject/설문조사(survey).exerd" workbook="DefaultEditorWorkbook">
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="설문조사(survey).exerd" partName="설문조사(survey).exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/설문조사(survey).exerd" title="설문조사(survey).exerd" tooltip="scottProject/설문조사(survey).exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/설문조사(survey).exerd"/>
+</editor>
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="ohora.exerd" partName="ohora.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/ohora.exerd" title="ohora.exerd" tooltip="scottProject/ohora.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/ohora.exerd"/>
 </editor>
 </editors>
 <views>
@@ -69,7 +73,7 @@
 <element path="/scottProject"/>
 </expanded>
 <selection>
-<element path="/scottProject/설문조사(survey).exerd"/>
+<element path="/scottProject"/>
 </selection>
 </viewState>
 </view>
@@ -207,6 +211,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/video.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/survey.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/설문조사(survey).exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/ohora.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/eXERD-Samples/study.exerd"/>
 </editors>
 <item historyLabel="study.exerd" index="0"/>
 <item historyLabel="pos.exerd" index="1"/>
@@ -219,7 +225,12 @@
 <item historyLabel="survey.exerd" index="5"/>
 <item historyLabel="video.exerd" index="4"/>
 <item historyLabel="survey.exerd" index="5"/>
-<item active="true" historyLabel="설문조사(survey).exerd" index="6"/>
+<item historyLabel="설문조사(survey).exerd" index="6"/>
+<item historyLabel="ohora.exerd" index="7"/>
+<item historyLabel="설문조사(survey).exerd" index="6"/>
+<item historyLabel="ohora.exerd" index="7"/>
+<item historyLabel="study.exerd" index="8"/>
+<item active="true" historyLabel="ohora.exerd" index="7"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -237,6 +248,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="ohora.exerd" tooltip="scottProject/ohora.exerd">
+<persistable path="/scottProject/ohora.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="설문조사(survey).exerd" tooltip="scottProject/설문조사(survey).exerd">
 <persistable path="/scottProject/설문조사(survey).exerd"/>
 </file>
