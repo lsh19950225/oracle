@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="232" y="91">
+<window height="768" width="1024" x="412" y="305">
 <fastViewData fastViewLocation="1024"/>
 <intro standby="true"/>
 <perspectiveBar>
@@ -27,38 +27,10 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-<part id="7"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="study.exerd" partName="study.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/eXERD-Samples/study.exerd" title="study.exerd" tooltip="eXERD-Samples/study.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eXERD-Samples/study.exerd"/>
-</editor>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="pos.exerd" partName="pos.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/eXERD-Samples/pos.exerd" title="pos.exerd" tooltip="eXERD-Samples/pos.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eXERD-Samples/pos.exerd"/>
-</editor>
-<editor id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="public.xdic" partName="public.xdic" path="C:/Class/Workspace/OracleClass/oracle/eXERD/eXERD-Samples/public.xdic" title="public.xdic" tooltip="eXERD-Samples/public.xdic" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/eXERD-Samples/public.xdic"/>
-</editor>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="join.exerd" partName="join.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/join.exerd" title="join.exerd" tooltip="scottProject/join.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/join.exerd"/>
-</editor>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="video.exerd" partName="video.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/video.exerd" title="video.exerd" tooltip="scottProject/video.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/video.exerd"/>
-</editor>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="survey.exerd" partName="survey.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/survey.exerd" title="survey.exerd" tooltip="scottProject/survey.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/survey.exerd"/>
-</editor>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="설문조사(survey).exerd" partName="설문조사(survey).exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/설문조사(survey).exerd" title="설문조사(survey).exerd" tooltip="scottProject/설문조사(survey).exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/설문조사(survey).exerd"/>
-</editor>
 <editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="ohora.exerd" partName="ohora.exerd" path="C:/Class/Workspace/OracleClass/oracle/eXERD/scottProject/ohora.exerd" title="ohora.exerd" tooltip="scottProject/ohora.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/scottProject/ohora.exerd"/>
 </editor>
@@ -73,7 +45,7 @@
 <element path="/scottProject"/>
 </expanded>
 <selection>
-<element path="/scottProject"/>
+<element path="/scottProject/ohora.exerd"/>
 </selection>
 </viewState>
 </view>
@@ -213,6 +185,7 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/설문조사(survey).exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/scottProject/ohora.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/eXERD-Samples/study.exerd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/eXERD-Samples/study.exerd"/>
 </editors>
 <item historyLabel="study.exerd" index="0"/>
 <item historyLabel="pos.exerd" index="1"/>
@@ -230,6 +203,9 @@
 <item historyLabel="설문조사(survey).exerd" index="6"/>
 <item historyLabel="ohora.exerd" index="7"/>
 <item historyLabel="study.exerd" index="8"/>
+<item historyLabel="ohora.exerd" index="7"/>
+<item historyLabel="study.exerd" index="9"/>
+<item historyLabel="ohora.exerd" index="7"/>
 <item active="true" historyLabel="ohora.exerd" index="7"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -237,6 +213,15 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="leftFolder"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7c28c1"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1af1bb3"/>
+<trimItem IMemento.internal.id="rightFolder"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@bfb884"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -244,6 +229,7 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottomFolder"/>
 </trimArea>
 </trimLayout>
 </window>
