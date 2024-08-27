@@ -117,12 +117,32 @@ EXEC ins_o_comment (1, 4, SYSDATE, '저도 구입추가요^^');
 
 EXEC ins_o_comment (1, 5, SYSDATE, '이 리뷰로 이 스타일 구매하고 싶어졌어요');
 --
-
-
-
-
-
-
+--
+DROP TABLE o_address;
+DROP TABLE o_cart;
+DROP TABLE o_cartlist;
+DROP TABLE o_category;
+DROP TABLE o_color;
+DROP TABLE o_comment;
+DROP TABLE o_coupon;
+DROP TABLE o_delivery;
+DROP TABLE o_design;
+DROP TABLE o_event;
+DROP TABLE o_issuedcoupon;
+DROP TABLE o_lineup;
+DROP TABLE o_membership;
+DROP TABLE o_order;
+DROP TABLE o_payment;
+DROP TABLE o_pdtcolor;
+DROP TABLE o_pdtdesign;
+DROP TABLE o_pdtlineup;
+DROP TABLE o_pdtoption;
+DROP TABLE o_product;
+DROP TABLE o_review;
+DROP TABLE o_subcategory;
+DROP TABLE o_user;
+--
+--
 
 
 
