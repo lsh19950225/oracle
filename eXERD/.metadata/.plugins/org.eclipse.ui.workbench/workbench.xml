@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
-<window height="768" width="1024" x="412" y="305">
+<window height="768" width="1024" x="425" y="69">
 <fastViewData fastViewLocation="1024"/>
 <intro standby="true"/>
 <perspectiveBar>
@@ -206,6 +206,7 @@
 <item historyLabel="ohora.exerd" index="7"/>
 <item historyLabel="study.exerd" index="9"/>
 <item historyLabel="ohora.exerd" index="7"/>
+<item historyLabel="ohora.exerd" index="7"/>
 <item active="true" historyLabel="ohora.exerd" index="7"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -213,15 +214,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="leftFolder"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7c28c1"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@1af1bb3"/>
-<trimItem IMemento.internal.id="rightFolder"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@bfb884"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -229,7 +221,6 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottomFolder"/>
 </trimArea>
 </trimLayout>
 </window>
