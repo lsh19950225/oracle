@@ -68,8 +68,11 @@ RENAME COLUMN CPN_DISOUNT_RATE TO CPN_DICOUNT_RATE;
 --
 -- INSERT 내용 쿼리.
 SELECT *
-FROM o_review;
+FROM o_comment;
 --
+DELETE
+FROM o_comment
+WHERE cmt_id = 6;
 --
 DESC o_review;
 --
@@ -120,19 +123,37 @@ EXEC ins_o_comment (2, 1004, SYSDATE, '너무 예쁘네요');
 
 EXEC ins_o_comment (2, 1005, SYSDATE, '저도 구입추가요^^');
 
-EXEC ins_o_comment (2, 1006, SYSDATE, '이 리뷰로 이 스타일 구매하고 싶어졌어요');
+EXEC ins_o_comment (2, 1007, SYSDATE, '이 리뷰로 이 스타일');
 --
 --
+DROP TABLE o_address;
+DROP TABLE o_ask;
 DROP TABLE o_auth;
+DROP TABLE o_cart;
+DROP TABLE o_cartlist;
 DROP TABLE o_category;
+DROP TABLE o_color;
+DROP TABLE o_comment;
 DROP TABLE o_coupon;
 DROP TABLE o_cpnrange;
+DROP TABLE o_design;
+DROP TABLE o_event;
+DROP TABLE o_faq;
+DROP TABLE o_faqcategory;
+DROP TABLE o_issuedcoupon;
+DROP TABLE o_lineup;
 DROP TABLE o_membership;
+DROP TABLE o_notice;
 DROP TABLE o_order;
 DROP TABLE o_orderstate;
 DROP TABLE o_ordproduct;
+DROP TABLE o_payment;
+DROP TABLE o_pdtcolor;
+DROP TABLE o_pdtdesign;
+DROP TABLE o_pdtlineup;
 DROP TABLE o_pdtoption;
 DROP TABLE o_product;
+DROP TABLE o_review;
 DROP TABLE o_subcategory;
 DROP TABLE o_user;
 --
@@ -153,8 +174,12 @@ SET user_name = '양'
 WHERE user_id = 1003;
 --
 UPDATE o_user
-SET user_name = '최곽민식'
+SET user_name = '민식'
 WHERE user_id = 1004;
+--
+UPDATE o_user
+SET user_name = '윤발'
+WHERE user_id = 1005;
 --
 SELECT *
 FROM o_order;
@@ -307,6 +332,13 @@ UPDATE o_user
 SET user_name = '윤발'
 WHERE user_id = 1005;
 --
+UPDATE o_user
+SET user_name = '양'
+WHERE user_id = 1003;
+--
+UPDATE o_user
+SET user_name = '최곽민식'
+WHERE user_id = 1004;
 SELECT *
 FROM o_user;
 --
