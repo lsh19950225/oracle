@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="17" version="2.0">
 <workbenchAdvisor/>
-<window height="760" maximized="true" width="1024" x="587" y="96">
+<window height="760" width="1024" x="459" y="39">
 <fastViewData fastViewLocation="1024"/>
 <intro standby="true"/>
 <perspectiveBar>
@@ -109,13 +109,8 @@
 <view id="com.tomato.exerd.ui.views.domain"/>
 <view id="com.tomato.exerd.validate.ui.ValidateView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
-<fastViewBars>
-<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@bfb884" orientation="512" selectedTabId="org.eclipse.ui.internal.introview" style="0">
-<fastViews>
-<view id="org.eclipse.ui.internal.introview" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-</fastViewBars>
+<view id="org.eclipse.ui.internal.introview"/>
+<fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="leftFolder">
@@ -127,15 +122,17 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@bfb884" ratio="0.89368105" ratioLeft="891" ratioRight="106" relationship="2" relative="leftFolder">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
+<page content="org.eclipse.ui.internal.introview" label="환영 페이지"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.18" ratioLeft="180" ratioRight="820" relationship="2" relative="leftFolder"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1af1bb3" ratio="0.8516775" ratioLeft="1447" ratioRight="252" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1af1bb3" ratio="0.8436578" ratioLeft="572" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.tomato.exerd.ui.views.thumbnail" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.thumbnail" label="썸네일"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
