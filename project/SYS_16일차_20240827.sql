@@ -304,7 +304,7 @@ BEGIN
 -- EXCEPTION
 END;
 
-EXEC select_photorecord (1);
+EXEC select_photorecord (2);
 --
 SELECT *
 FROM o_revurl;
@@ -349,7 +349,6 @@ BEGIN
     FROM o_review a, o_user b, o_membership c
     WHERE a.user_id = b.user_id AND b.mem_id = c.mem_id AND pdt_id = ppdt_id
     ORDER BY a.rev_isrecommend DESC, rev_good_count DESC, a.rev_writedate DESC
-        , rev_good_count DESC, a.rev_writedate DESC
     )
     LOOP
         DBMS_OUTPUT.PUT_LINE(vo_review.aa);
@@ -462,3 +461,201 @@ exec SELECT_ALLISPHOTO (1,'Y');
 --
 select *
 from o_revurl;
+--
+--
+
+CREATE OR REPLACE PROCEDURE select_rev_rating
+(
+    ppdt_id o_review.pdt_id%TYPE
+)
+IS
+    vavg_rev_rating NUMBER(2,1);
+    vavg_percent NUMBER(3);
+BEGIN
+    SELECT AVG(rev_rating) "별점평균"
+        , ROUND((AVG(rev_rating) / 5) * 100, 2) avg_percent INTO vavg_rev_rating, vavg_percent
+    FROM o_review
+    WHERE pdt_id = ppdt_id;
+    
+    DBMS_OUTPUT.PUT_LINE('★' || vavg_rev_rating);
+    DBMS_OUTPUT.PUT_LINE(vavg_percent || '%의 구매자가 이 상품을 좋아합니다.');
+    
+    FOR vo_review IN
+    (
+    WITH temp AS
+    (
+    SELECT LEVEL 별점
+    FROM dual
+    CONNECT BY LEVEL <= 5
+    )
+    SELECT
+        CASE
+        WHEN temp.별점 = 5 THEN '아주 좋아요'
+        WHEN temp.별점 = 4 THEN '맘에 들어요'
+        WHEN temp.별점 = 3 THEN '보통이에요'
+        WHEN temp.별점 = 2 THEN '그냥 그래요'
+        WHEN temp.별점 = 1 THEN '별로예요'
+        END starpoint
+        , RPAD('#', ROUND(RATIO_TO_REPORT(NVL(COUNT(a.rev_rating), 0)) OVER() * 50), '#') ||
+        LPAD(' ', 50 - ROUND(RATIO_TO_REPORT(NVL(COUNT(a.rev_rating), 0)) OVER() * 50), ' ') stargraph
+    FROM o_review a RIGHT OUTER JOIN temp ON temp.별점 = a.rev_rating
+    WHERE pdt_id = ppdt_id
+    GROUP BY a.rev_rating , temp.별점
+    ORDER BY temp.별점 DESC
+    )
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(vo_review.starpoint);
+        DBMS_OUTPUT.PUT_LINE(vo_review.stargraph);
+    END LOOP;
+    COMMIT;
+-- EXCEPTION
+END;
+--
+EXEC select_rev_rating (2);
+--
+--
+CREATE OR REPLACE PROCEDURE select_photorecord
+(
+    ppdt_id o_review.pdt_id%TYPE
+)
+IS
+    vcount NUMBER;
+BEGIN
+    -- 포토와 동영상의 수를 계산
+    SELECT COUNT(b.rurl_id) INTO vcount
+    FROM o_review a, o_revurl b
+    WHERE a.rev_id = b.rev_id AND a.pdt_id = ppdt_id;
+    -- 결과 출력
+    DBMS_OUTPUT.PUT_LINE('포토' || '&' || '동영상' || '(' || vcount || ')');
+    -- 리뷰의 사진과 동영상을 최신순으로 상위 8개만 출력
+    FOR vo_review IN
+    (
+        SELECT rurl_photo, rurl_record
+        FROM 
+        (
+            SELECT b.rurl_photo, b.rurl_record
+            FROM o_review a, o_revurl b
+            WHERE a.rev_id = b.rev_id AND a.pdt_id = ppdt_id
+            ORDER BY a.rev_writedate DESC
+        )
+        WHERE ROWNUM <= 8
+    )
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(vo_review.rurl_photo);
+        DBMS_OUTPUT.PUT_LINE(vo_review.rurl_record);
+    END LOOP;
+    COMMIT;
+-- EXCEPTION
+END;
+--
+exec SELECT_PHOTORECORD (1);
+--
+--
+CREATE OR REPLACE PROCEDURE select_allisphoto
+(
+    ppdt_id o_review.pdt_id%TYPE,
+    prev_isphoto o_review.rev_isphoto%TYPE
+)
+IS
+BEGIN
+    FOR visphoto IN
+    (
+        SELECT rurl_photo, rurl_record
+        FROM o_review a
+        JOIN o_revurl b ON a.rev_id = b.rev_id
+        WHERE a.rev_isphoto = prev_isphoto
+        AND a.pdt_id = ppdt_id
+    )
+    LOOP
+        -- 레코드의 각 필드를 문자열로 변환하여 출력
+        DBMS_OUTPUT.PUT_LINE('Photo URL: ' || visphoto.rurl_photo);
+        DBMS_OUTPUT.PUT_LINE('Record URL: ' || visphoto.rurl_record);
+        DBMS_OUTPUT.PUT_LINE('---------------------------');
+    END LOOP;
+    
+    FOR visrecord IN
+    (
+        SELECT rurl_record
+        FROM o_review a
+        JOIN o_revurl b ON a.rev_id = b.rev_id
+        WHERE a.rev_isphoto = prev_isphoto
+        AND a.pdt_id = ppdt_id
+    )
+    LOOP
+        -- 레코드의 각 필드를 문자열로 변환하여 출력
+        DBMS_OUTPUT.PUT_LINE('Record URL: ' || visrecord.rurl_record);
+        DBMS_OUTPUT.PUT_LINE('---------------------------');
+    END LOOP;
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error' || SQLERRM);
+END;
+--
+exec SELECT_ALLISPHOTO (1,'Y');
+--
+SELECT *
+FROM o_review;
+--
+update o_review
+set rev_isphoto = 'Y'
+where rev_id = 5;
+--
+--
+CREATE OR REPLACE PROCEDURE select_o_review
+(
+    ppdt_id o_review.pdt_id%TYPE
+)
+IS
+BEGIN
+    FOR vo_review IN
+    (
+    SELECT CASE WHEN a.rev_isrecommend = 'Y' THEN '오호라 추천 리뷰'
+                ELSE ''
+                END AS aa
+            , CASE WHEN a.rev_writedate >= TRUNC(SYSDATE) - INTERVAL '1' DAY THEN 'NEW'
+                ELSE ''
+                END AS bb
+            , CASE WHEN a.rev_writedate <= SYSDATE - 30 THEN '한달 사용 리뷰'
+                ELSE ''
+                END AS cc
+            , CASE 
+                WHEN a.rev_rating = 5 THEN '★★★★★ '||'아주 좋아요'
+                WHEN a.rev_rating = 4 THEN '★★★★ '||'맘에 들어요'
+                WHEN a.rev_rating = 3 THEN '★★★ '||'보통이에요'
+                WHEN a.rev_rating = 2 THEN '★★ '||'그냥 그래요'
+                ELSE '★ '||'별로예요'
+            END starpoint
+            , rev_content content
+            , CASE WHEN a.user_id = 1001 THEN '이 리뷰는 오호라 관리자가 등록한 리뷰입니다.'
+                END AS manager
+            , rev_good_count
+            , rev_bad_count
+            , rev_comment_count
+            , CASE
+             WHEN c.mem_name = 'crew' THEN N'오호라 크루님의 리뷰입니다.'
+             WHEN LENGTH(b.user_name) = 1 THEN N'*'||'님의 리뷰입니다.'
+             ELSE REPLACE(b.user_name, SUBSTR(b.user_name, -2, 2), '**')||'님의 리뷰입니다.'
+                END AS name
+    FROM o_review a, o_user b, o_membership c
+    WHERE a.user_id = b.user_id AND b.mem_id = c.mem_id AND pdt_id = ppdt_id
+    ORDER BY a.rev_isrecommend DESC, rev_good_count DESC, a.rev_writedate DESC
+    )
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(vo_review.aa);
+        DBMS_OUTPUT.PUT_LINE(vo_review.bb);
+        DBMS_OUTPUT.PUT_LINE(vo_review.cc);
+        DBMS_OUTPUT.PUT_LINE(vo_review.starpoint);
+        DBMS_OUTPUT.PUT_LINE(vo_review.content);
+        DBMS_OUTPUT.PUT_LINE(vo_review.manager);
+        DBMS_OUTPUT.PUT_LINE('도움돼요 '||vo_review.rev_good_count);
+        DBMS_OUTPUT.PUT_LINE('도움안돼요 '||vo_review.rev_bad_count);
+        DBMS_OUTPUT.PUT_LINE('댓글 '||vo_review.rev_comment_count);
+        DBMS_OUTPUT.PUT_LINE(vo_review.name);
+        DBMS_OUTPUT.PUT_LINE('-----------------------------------------------');
+    END LOOP;
+    COMMIT;
+-- EXCEPTION
+END;
+--
+EXEC select_o_review (1);
